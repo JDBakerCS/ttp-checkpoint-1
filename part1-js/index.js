@@ -34,7 +34,10 @@ console.log("[ SECTION A — Variables & Math ]")
 // Declare a variable using const and assign it the number 100.
 // Declare a variable using let and assign it the number 45.
 // Log both.
-
+const x = 100;
+let y = 45;
+console.log(x);
+console.log(y);
 
 // A2.
 // Using only those two variables, write a single expression that adds them,
@@ -42,6 +45,7 @@ console.log("[ SECTION A — Variables & Math ]")
 // Log the result.
 
 
+console.log((((x + y) - 20) * 2) / 5);
 // A3.
 // Reassign your let variable to a different number. Log it.
 // Now try to reassign your const variable. What happens?
@@ -49,8 +53,10 @@ console.log("[ SECTION A — Variables & Math ]")
 // EXPLAIN: What is the difference between let and const?
 //          Write your answer as a comment below.
 //
-//          answer:
-
+//          answer: let variables can be reassigned but const cannot, 
+//                  and causes an error
+//let y = 46;
+//const x = j;
 
 // A4.
 // Using the % operator, write an expression that tells you
@@ -61,6 +67,13 @@ console.log("[ SECTION A — Variables & Math ]")
 //          Why is it useful for checking even/odd?
 //
 //          answer:
+const num= 47;
+
+if(num % 2 === 0) {
+  console.log(`${num} is even.`);
+} else {
+  console.log(`${num} is odd.`);
+}
 
 
 // ------------------------------------------------------------
@@ -74,24 +87,29 @@ const rawInput = "   JavaScript is AWESOME   "
 
 // B1.
 // Log the string with all leading and trailing spaces removed (extra spaces in front and end of the text).
-
+const NewInput = rawInput.trim();
+  console.log(NewInput);
 
 // B2.
 // Log the string converted to all lowercase.
-
+const lowerCase = NewInput.toLowerCase();
+  console.log(lowerCase);
 
 // B3.
 // Log the number of characters in rawInput (including spaces).
-
+const strLength = rawInput.length;
+  console.log(strLength);
 
 // B4.
 // Log whether rawInput contains the word "awesome" (lowercase).
 // It should return true.
+ 
+console.log(lowerCase.includes("awesome"));
 
 
 // B5.
 // Log the first 10 characters of rawInput.
-
+console.log(rawInput.slice(0, 10));
 
 // B6.
 // Split rawInput (after trimming it) into an array of individual words.
@@ -99,9 +117,11 @@ const rawInput = "   JavaScript is AWESOME   "
 //
 // EXPLAIN: What does .split() do? What argument did you pass it and why?
 //
-//        answer: 
-
-
+//        answer: trim() removes the spaces at the beginning and end
+//                 split(/\s+/) breaks the string into words
+//                  then log wordsArray
+const wordsArray = rawInput.trim().split(/\s+/);
+  console.log(wordsArray);
 // ------------------------------------------------------------
 // SECTION C — Arrays (reference to array methods: https://www.w3schools.com/jsref/jsref_obj_array.asp)
 //
@@ -117,31 +137,45 @@ const scores = [88, 72, 95, 60, 84, 100, 73, 91]
 // C1.
 // Log the first score. Log the last score.
 // Do not hardcode the index for the last one.
+ const first = scores[0];
+ const last = scores[scores.length-1];
+
+ console.log(first);
+ console.log(last);
 
 
 // C2.
 // Log the total number of scores we see in the array.
+let total=0;
 
+for(const sum of scores) {
+  total += num;
+}
+console.log(total);
 
 // C3.
 // Use a method to mutate and add the number 78 to the end of the array.
 // Log the updated array.
+scores.push(78);
+console.log(scores);
 
 
 // C4.
 // Use a method to log the index of the score 95.
 // Log the index.
-
+console.log(scores[2]);
 
 // C5.
 // Use a method to log whether the array includes the score 50.
 // Log the boolean value.
-
+console.log(scores.includes(50));
 
 // C6.
 // Use a for loop to log each score on its own line.
 // Do not modify the original scores array.
-
+for(let index = 0;index <scores.length; index++) {
+  console.log(scores[index]);
+}
 
 // C7.
 // Use .forEach() to log each score on its own line.
@@ -149,15 +183,24 @@ const scores = [88, 72, 95, 60, 84, 100, 73, 91]
 //
 // EXPLAIN: What is the difference between a for loop and forEach?
 //          Is one better than the other?
-//
-
+// A for loop and for each are simailar but you have more control over a loop
+//like where you start and where you stop and how to increment
+//forEach automatically goes thru each element for you. its just slightly more simple.
+scores.forEach(score => {
+  console.log(score);
+});
 
 // C8.
 // Use .filter() to create a new array containing only the scores above 80.
 // Log the new result array.
 // Do not modify the original scores array.
+const result = scores.filter(checkScore);
 
-
+function checkScore(scores) {
+  return scores > 80;
+  
+}
+  console.log(result);
 // C9.
 // Use .map() to create a new array where every score is multiplied by 2.
 // Log the new result array.
@@ -167,7 +210,12 @@ const scores = [88, 72, 95, 60, 84, 100, 73, 91]
 //          How are they different?
 //
 //          answer:
+const newArr = scores.map(DoubleScore);
 
+function DoubleScore(num) {
+  return num * 2;
+}
+console.log(newArr);
 
 
 
@@ -188,35 +236,42 @@ const student = {
 // D1.
 // Log the value of name using dot notation.
 // Log the value of city using bracket notation.
-
+console.log(student.name);
+console.log(student["city"]);
 
 // D2.
 // Add a new key called grade and set it to "B+".
 // Log the updated object.
+student.grade = "B+";
 
+console.log(student);
 
 // D3.
 // Use a method to log all of the keys in the object.
-
+console.log(Object.keys(student));
 
 // D4.
 // Use a method to log all of the values in the object.
-
+console.log(Object.values(student));
 
 // D5.
 // Using a for...in loop, log each key-value pair in this exact format:
 //   name: Jane
 //   age: 21
 //   (etc.)
-
+for(const key in student) {
+  console.log(`${key}: ${student[key]}`);
+}
 
 // D6.
 // EXPLAIN: What is the difference between dot notation and bracket notation?
 //          Give an example of when you would need to use bracket notation
 //          instead of dot notation.
 //
-//          answer:
-
+//          answer:dot = direct propety access
+//                bracket notation is need when the property name is 
+//                dynamic, stored in a variable, or not written in a way dot
+//                notation can use easily
 // ------------------------------------------------------------
 // SECTION E — Arrays of Objects
 // ------------------------------------------------------------
@@ -234,22 +289,31 @@ const roster = [
 
 // E1.
 // Log the name of the third student.
-
+console.log(roster[2].name);
 
 // E2.
 // Using forEach, log the name of every student who is present.
+roster.forEach(student => {
+  if(student.present)
+    console.log(student.name);
+});
 
 
 // E3.
 // Create a new array containing only the students who passed (grade >= 70).
 // Log each passing student's name and grade.
-
+roster.forEach(student => {
+  if (student.grade >= 70)
+    console.log(student.name, student.grade);
+})
 
 // E4.
 // Create a new array of just the names of all students (no other data).
 // Log the result array.
 
-
+const newArray = roster.map(student => student.name);
+    console.log(newArray);
+  
 // E5.
 // EXPLAIN: Why would you store objects inside an array?
 //          What problem does that structure solve compared to
