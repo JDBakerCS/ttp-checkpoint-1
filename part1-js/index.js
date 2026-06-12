@@ -334,6 +334,9 @@ console.log("\n[ SECTION F — Functions ]")
 // Write a function called greet that takes a name as an argument
 // and returns a greeting string.
 //
+function greet(name) {
+  return `Hello, ${name}!`;
+}
 console.log(greet("Alex"))   // → "Hello, Alex!"
 console.log(greet("Mike"))   // → "Hello, Mike!"
 
@@ -341,6 +344,9 @@ console.log(greet("Mike"))   // → "Hello, Mike!"
 // F2.
 // Write a function called square that takes a number and returns its square.
 //
+function square(nums){
+  return nums**2;
+}
 console.log(square(4))   // → 16
 console.log(square(9))   // → 81
 //
@@ -354,6 +360,13 @@ console.log(square(9))   // → 81
 // Write a function called isEven that takes a number and returns
 // true if it is even and false if it is odd.
 //
+function isEven(numm) {
+  if(numm % 2 === 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
 console.log(isEven(4))   // → true
 console.log(isEven(7))   // → false
 console.log(isEven(0))   // → true
@@ -364,6 +377,15 @@ console.log(isEven(0))   // → true
 // and returns the total of all the numbers added together.
 // Use a loop inside — do not use a built-in method.
 //
+
+function sum(numArray) {
+    let total = 0;
+
+    for (const num of numArray) {
+      total += num;
+    }
+    return total;
+  }
 console.log(sum([1, 2, 3, 4, 5]))   // → 15
 console.log(sum([10, 20, 30]))       // → 60
 console.log(sum([]))                 // → 0
