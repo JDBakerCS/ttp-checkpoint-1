@@ -146,12 +146,8 @@ const scores = [88, 72, 95, 60, 84, 100, 73, 91]
 
 // C2.
 // Log the total number of scores we see in the array.
-let total=0;
 
-for(const sum of scores) {
-  total += num;
-}
-console.log(total);
+console.log(scores.length);
 
 // C3.
 // Use a method to mutate and add the number 78 to the end of the array.
@@ -163,7 +159,7 @@ console.log(scores);
 // C4.
 // Use a method to log the index of the score 95.
 // Log the index.
-console.log(scores[2]);
+console.log(scores.at([2]));
 
 // C5.
 // Use a method to log whether the array includes the score 50.
@@ -302,10 +298,14 @@ roster.forEach(student => {
 // E3.
 // Create a new array containing only the students who passed (grade >= 70).
 // Log each passing student's name and grade.
+let newAr = [];
 roster.forEach(student => {
-  if (student.grade >= 70)
+  if (student.grade >= 70) {
+    newAr.push(student);
+  
     console.log(student.name, student.grade);
-})
+  }
+});
 
 // E4.
 // Create a new array of just the names of all students (no other data).
@@ -385,10 +385,11 @@ function sum(numArray) {
       total += num;
     }
     return total;
+  }
 console.log(sum([1, 2, 3, 4, 5]))   // → 15
 console.log(sum([10, 20, 30]))       // → 60
 console.log(sum([]))                 // → 0
-}
+
 
 // F5.
 // Write a function called myForEach that takes an array and a callback function as arguments.
@@ -445,16 +446,15 @@ console.log(myMap([1, 2, 3], (n) => n + 10))   // → [11, 12, 13]
 //
 function myFilter(Arr, callback) {
   let FilteredArray = [];
+  
   for (let i = 0; i < Arr.length; i++) {
-    let FiltValue = callback(Arr[i]) 
-    if (callback(Arr[i])===true) {
+    let FiltValue = callback(Arr[i]);
+    
+    if (callback(Arr[i]) === true) {
         FilteredArray.push(Arr[i]);
     }
-
   }
     return FilteredArray;
-
-
 }
 
 console.log(myFilter([1, 2, 3, 4, 5], n => n > 3))          // → [4, 5]
@@ -464,4 +464,5 @@ console.log(myFilter([10, 25, 30, 45], n => n % 2 === 0))   // → [10, 30]
 //          What is the key difference between what they return?
 //          Why do neither of them change the original array?
 //
-//          answer:
+//          answer: both use new arrays but myMap creats a new array and returns the new values in the new array and returns it
+                  //myFilter returns a new aarry of only the orginal values that pass the test.
