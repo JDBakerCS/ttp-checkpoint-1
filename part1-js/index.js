@@ -385,11 +385,10 @@ function sum(numArray) {
       total += num;
     }
     return total;
-  }
 console.log(sum([1, 2, 3, 4, 5]))   // → 15
 console.log(sum([10, 20, 30]))       // → 60
 console.log(sum([]))                 // → 0
-
+}
 
 // F5.
 // Write a function called myForEach that takes an array and a callback function as arguments.
@@ -397,9 +396,14 @@ console.log(sum([]))                 // → 0
 // It should not return anything.
 // Do not use the native .forEach() inside your function — use a for loop.
 //
+function myForEach(array, callback) {
+  for(let i = 0; i < array.length; i++) {
+    callback(array[i]);
+  }
+}
 myForEach([1, 2, 3], function(n) {
-  console.log(n)
-})
+  console.log(n);
+});
 // → 1
 // → 2
 // → 3
@@ -407,7 +411,8 @@ myForEach([1, 2, 3], function(n) {
 // EXPLAIN: What is a callback function?
 //          In the example above, what plays the role of the callback?
 //
-//          answer:
+//          answer:a callback function is a function passed into another function so it can
+//                be run later
 
 
 // F6.
@@ -415,7 +420,19 @@ myForEach([1, 2, 3], function(n) {
 // It should return a NEW array where each element is the result of
 // calling the callback on the original element.
 // Do not use the native .map() inside your function — use a for loop.
-//
+
+function myMap(arr, cb) {
+  let newArr = [];
+  for(let i = 0; i < arr.length; i++) {
+     let NewValue = cb(arr[i]);
+      
+     newArr.push(NewValue)
+
+  }
+  return newArr;
+}
+
+
 console.log(myMap([1, 2, 3], (n) => n * 2))    // → [2, 4, 6]
 console.log(myMap([1, 2, 3], (n) => n + 10))   // → [11, 12, 13]
 
@@ -426,6 +443,20 @@ console.log(myMap([1, 2, 3], (n) => n + 10))   // → [11, 12, 13]
 // the callback returns true.
 // Do not use the native .filter() inside your function — use a for loop.
 //
+function myFilter(Arr, callback) {
+  let FilteredArray = [];
+  for (let i = 0; i < Arr.length; i++) {
+    let FiltValue = callback(Arr[i]) 
+    if (callback(Arr[i])===true) {
+        FilteredArray.push(Arr[i]);
+    }
+
+  }
+    return FilteredArray;
+
+
+}
+
 console.log(myFilter([1, 2, 3, 4, 5], n => n > 3))          // → [4, 5]
 console.log(myFilter([10, 25, 30, 45], n => n % 2 === 0))   // → [10, 30]
 //
