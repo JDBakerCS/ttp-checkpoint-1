@@ -54,10 +54,44 @@
         Both rules target the same paragraph.
         Which color will the paragraph actually be? Why does one rule win?
 
-        Answer:
+        Answer: #intro will win over because it is a specific tag that only effects tags that include #intro
+              whereas, here p will effect everything that is inside a p tag. or any p tag. p is global
 
 -->
 
 <!-- ============================================================ -->
 <!-- Write your complete HTML page starting below this line      -->
 <!-- ============================================================ -->
+ <!DOCTYPE html>
+ <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part Two: HTML Page From Scratch</title>
+    <a href="look.css">Link</a>
+    <!--look.css will connect the html to the styles sheet-->
+    </head>
+    <body>
+      <h1>My Checkpoint Page</h1>
+      <p id="intro">This is part two of the ttp checkpoint that focuses on building
+                    an HTML and CSS from scratch. Additionally, I must do my best to
+                    code it from memory before looking up references. If I use AI, I
+                    prompt it never show me code and to only be used as a tutor in order
+                    to practice and internalize the process to display depth of knowledge.
+      </p>
+      <h2 id="section-title">Now watch this drive</h2>
+      <ul>
+        <li class="highlight">First item</li>
+        <li>Second item</li>
+        <li class="highlight">Third item</li>
+        <li>Fourth item</li>
+        <!--An id is unique to the str name its attached to and class is like a group label-->
+        <!--Yes, two elements on the same page can share the same class-->
+        <!--No, id are unique to the label its given-->
+      
+      </ul>
+      <div id="box">Would you like to know more?</div>
+      <button id="click-me">Click here</button>
+    </body>
+  
+ </html>

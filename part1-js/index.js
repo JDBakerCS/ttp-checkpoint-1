@@ -53,8 +53,8 @@ console.log((((x + y) - 20) * 2) / 5);
 // EXPLAIN: What is the difference between let and const?
 //          Write your answer as a comment below.
 //
-//          answer: let variables can be reassigned but const cannot, 
-//                  and causes an error
+//       ->   answer: let variables can be reassigned but const cannot, 
+//                    and causes an error
 //let y = 46;
 //const x = j;
 
@@ -67,9 +67,9 @@ console.log((((x + y) - 20) * 2) / 5);
 //          Why is it useful for checking even/odd?
 //
 //          answer:
-const num= 47;
+const num = 47;
 
-if(num % 2 === 0) {
+if (num % 2 === 0) {
   console.log(`${num} is even.`);
 } else {
   console.log(`${num} is odd.`);
@@ -88,22 +88,22 @@ const rawInput = "   JavaScript is AWESOME   "
 // B1.
 // Log the string with all leading and trailing spaces removed (extra spaces in front and end of the text).
 const NewInput = rawInput.trim();
-  console.log(NewInput);
+console.log(NewInput);
 
 // B2.
 // Log the string converted to all lowercase.
 const lowerCase = NewInput.toLowerCase();
-  console.log(lowerCase);
+console.log(lowerCase);
 
 // B3.
 // Log the number of characters in rawInput (including spaces).
 const strLength = rawInput.length;
-  console.log(strLength);
+console.log(strLength);
 
 // B4.
 // Log whether rawInput contains the word "awesome" (lowercase).
 // It should return true.
- 
+
 console.log(lowerCase.includes("awesome"));
 
 
@@ -121,7 +121,7 @@ console.log(rawInput.slice(0, 10));
 //                 split(/\s+/) breaks the string into words
 //                  then log wordsArray
 const wordsArray = rawInput.trim().split(/\s+/);
-  console.log(wordsArray);
+console.log(wordsArray);
 // ------------------------------------------------------------
 // SECTION C — Arrays (reference to array methods: https://www.w3schools.com/jsref/jsref_obj_array.asp)
 //
@@ -137,11 +137,11 @@ const scores = [88, 72, 95, 60, 84, 100, 73, 91]
 // C1.
 // Log the first score. Log the last score.
 // Do not hardcode the index for the last one.
- const first = scores[0];
- const last = scores[scores.length-1];
+const first = scores[0];
+const last = scores[scores.length - 1];
 
- console.log(first);
- console.log(last);
+console.log(first);
+console.log(last);
 
 
 // C2.
@@ -169,7 +169,7 @@ console.log(scores.includes(50));
 // C6.
 // Use a for loop to log each score on its own line.
 // Do not modify the original scores array.
-for(let index = 0;index <scores.length; index++) {
+for (let index = 0; index < scores.length; index++) {
   console.log(scores[index]);
 }
 
@@ -194,9 +194,9 @@ const result = scores.filter(checkScore);
 
 function checkScore(scores) {
   return scores > 80;
-  
+
 }
-  console.log(result);
+console.log(result);
 // C9.
 // Use .map() to create a new array where every score is multiplied by 2.
 // Log the new result array.
@@ -255,7 +255,7 @@ console.log(Object.values(student));
 //   name: Jane
 //   age: 21
 //   (etc.)
-for(const key in student) {
+for (const key in student) {
   console.log(`${key}: ${student[key]}`);
 }
 
@@ -276,10 +276,10 @@ console.log("\n[ SECTION E — Arrays of Objects ]")
 
 // The following array is provided for this section.
 const roster = [
-  { name: "Alex",  grade: 92, present: true  },
+  { name: "Alex", grade: 92, present: true },
   { name: "Jamie", grade: 74, present: false },
-  { name: "Jane",grade: 88, present: true  },
-  { name: "Riley", grade: 61, present: true  },
+  { name: "Jane", grade: 88, present: true },
+  { name: "Riley", grade: 61, present: true },
   { name: "Casey", grade: 95, present: false }
 ]
 
@@ -290,7 +290,7 @@ console.log(roster[2].name);
 // E2.
 // Using forEach, log the name of every student who is present.
 roster.forEach(student => {
-  if(student.present)
+  if (student.present)
     console.log(student.name);
 });
 
@@ -302,7 +302,7 @@ let newAr = [];
 roster.forEach(student => {
   if (student.grade >= 70) {
     newAr.push(student);
-  
+
     console.log(student.name, student.grade);
   }
 });
@@ -312,8 +312,8 @@ roster.forEach(student => {
 // Log the result array.
 
 const newArray = roster.map(student => student.name);
-    console.log(newArray);
-  
+console.log(newArray);
+
 // E5.
 // EXPLAIN: Why would you store objects inside an array?
 //          What problem does that structure solve compared to
@@ -344,8 +344,8 @@ console.log(greet("Mike"))   // → "Hello, Mike!"
 // F2.
 // Write a function called square that takes a number and returns its square.
 //
-function square(nums){
-  return nums**2;
+function square(nums) {
+  return nums ** 2;
 }
 console.log(square(4))   // → 16
 console.log(square(9))   // → 81
@@ -361,7 +361,7 @@ console.log(square(9))   // → 81
 // true if it is even and false if it is odd.
 //
 function isEven(numm) {
-  if(numm % 2 === 0) {
+  if (numm % 2 === 0) {
     return true;
   } else {
     return false;
@@ -379,13 +379,13 @@ console.log(isEven(0))   // → true
 //
 
 function sum(numArray) {
-    let total = 0;
+  let total = 0;
 
-    for (const num of numArray) {
-      total += num;
-    }
-    return total;
+  for (const num of numArray) {
+    total += num;
   }
+  return total;
+}
 console.log(sum([1, 2, 3, 4, 5]))   // → 15
 console.log(sum([10, 20, 30]))       // → 60
 console.log(sum([]))                 // → 0
@@ -398,11 +398,11 @@ console.log(sum([]))                 // → 0
 // Do not use the native .forEach() inside your function — use a for loop.
 //
 function myForEach(array, callback) {
-  for(let i = 0; i < array.length; i++) {
+  for (let i = 0; i < array.length; i++) {
     callback(array[i]);
   }
 }
-myForEach([1, 2, 3], function(n) {
+myForEach([1, 2, 3], function (n) {
   console.log(n);
 });
 // → 1
@@ -424,10 +424,10 @@ myForEach([1, 2, 3], function(n) {
 
 function myMap(arr, cb) {
   let newArr = [];
-  for(let i = 0; i < arr.length; i++) {
-     let NewValue = cb(arr[i]);
-      
-     newArr.push(NewValue)
+  for (let i = 0; i < arr.length; i++) {
+    let NewValue = cb(arr[i]);
+
+    newArr.push(NewValue)
 
   }
   return newArr;
@@ -446,15 +446,15 @@ console.log(myMap([1, 2, 3], (n) => n + 10))   // → [11, 12, 13]
 //
 function myFilter(Arr, callback) {
   let FilteredArray = [];
-  
+
   for (let i = 0; i < Arr.length; i++) {
     let FiltValue = callback(Arr[i]);
-    
+
     if (callback(Arr[i]) === true) {
-        FilteredArray.push(Arr[i]);
+      FilteredArray.push(Arr[i]);
     }
   }
-    return FilteredArray;
+  return FilteredArray;
 }
 
 console.log(myFilter([1, 2, 3, 4, 5], n => n > 3))          // → [4, 5]
@@ -465,4 +465,4 @@ console.log(myFilter([10, 25, 30, 45], n => n % 2 === 0))   // → [10, 30]
 //          Why do neither of them change the original array?
 //
 //          answer: both use new arrays but myMap creats a new array and returns the new values in the new array and returns it
-                  //myFilter returns a new aarry of only the orginal values that pass the test.
+//myFilter returns a new aarry of only the orginal values that pass the test.
