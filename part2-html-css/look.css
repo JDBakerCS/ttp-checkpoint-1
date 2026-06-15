@@ -35,6 +35,11 @@ h1 {
   Using the CLASS selector, style the list items with the highlight class.
   Give them a background color and some padding so they stand out.
 */
+.highlight-heading{
+  font-size: 60px;
+  text-align: center;
+  ;
+}
 .highlight {
   background-color: rgb(255, 255, 98);
   padding: 4px;
@@ -83,6 +88,7 @@ h1 {
   display: block;
   border-radius: 5px;
   align-items: center;
+  text-align: center;
 
 }
 
@@ -93,15 +99,14 @@ h1 {
   and a cursor: pointer that turns into a pointer when the user hovers over it.
 */
 #click-me {
-  column-rule: center;
+  
   border-radius: 8px;
-  flex-direction: column;
   padding: 20px;
   font-size: 1.2rem;
   margin: 0 auto;
   display: block;
   background-color: antiquewhite;
-  border: 3px;
+  border: 5px;
   border-color: brown;
 }
 

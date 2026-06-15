@@ -99,14 +99,14 @@ console.log("\n[ SECTION C — Responding to Events ]")
 // to any text you choose.
 const changeButton = document.getElementById("change-btn");
 changeButton.addEventListener("click", function(event) {
-    mainHeading.textContent = "There's an old saying in Tennessee: Fool me once, shame on you. Fool me twice...you cant get fooled again"
-}
+    mainHeading.textContent = "There's an old saying in Tennessee: Fool me once, shame on you. Fool me twice...you cant get fooled again";
+});
 
 // C2.
 // Add a click listener to the button with the id "toggle-btn".
 // When clicked, toggle the class "highlighted" on the p with the id "output-text".
 // Add it if it is not there. Remove it if it is.
-toggleBtn.addEventListener("click")
+
 
 // C3.
 // Select the h1 with the id "main-heading" and add the class "active" to it.
@@ -136,7 +136,7 @@ toggleBtn.addEventListener("click")
 // ------------------------------------------------------------
 // SECTION D — Creating and Adding to the DOM
 // ------------------------------------------------------------
-console.log("\n[ SECTION D — Creating and Adding to the DOM ]")
+//console.log("\n[ SECTION D — Creating and Adding to the DOM ]")
 
 // D1.
 // Create a new li element.
@@ -166,4 +166,3 @@ console.log("\n[ SECTION D — Creating and Adding to the DOM ]")
 //          When does the newly created element actually appear on the page?
 //
 //          answer:
-

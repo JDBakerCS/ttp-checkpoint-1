@@ -107,9 +107,13 @@ console.log(strLength);
 console.log(lowerCase.includes("awesome"));
 
 
+
 // B5.
 // Log the first 10 characters of rawInput.
-console.log(rawInput.slice(0, 10));
+console.log(rawInput.slice(0, 10));            //Try again
+//console.log(rawInput.trim().slice(0, 10))
+//let NewInput= '';
+
 
 // B6.
 // Split rawInput (after trimming it) into an array of individual words.
@@ -232,8 +236,7 @@ const student = {
 // D1.
 // Log the value of name using dot notation.
 // Log the value of city using bracket notation.
-console.log(student.name);
-console.log(student["city"]);
+console.log(student.name, student["city"]);
 
 // D2.
 // Add a new key called grade and set it to "B+".
@@ -381,7 +384,7 @@ console.log(isEven(0))   // → true
 function sum(numArray) {
   let total = 0;
 
-  for (const num of numArray) {
+  for (let num of numArray) {
     total += num;
   }
   return total;
