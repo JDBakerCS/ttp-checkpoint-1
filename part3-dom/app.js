@@ -22,7 +22,9 @@ console.log("[ SECTION A — Selecting Elements ]")
 //   the h1
 //   the p that shows the page status
 //   the unordered list
-
+const mainHeading = document.getElementById("main-heading");
+const subtitle = document.getElementById("subtitle");
+const itemList = document.getElementById("item-list");
 
 // A2.
 // Use querySelector to select the following elements.
@@ -31,28 +33,31 @@ console.log("[ SECTION A — Selecting Elements ]")
 //   the h2 — select it by its tag name
 //   the "Toggle Highlight" button — select it by its id (look at index.html to find it)
 //   a list item — select it by its class (look at index.html to find the class name)
-
-
+const h2 = document.querySelector("h2");
+const toggleBtn = document.querySelector("#toggle-btn");
+const listItem = document.querySelector(".list-item");
 // A3.
 // Use querySelectorAll to select all elements with the class "list-item".
 // Store the result in a variable and log it.
-
-
+const listItemAll = document.querySelectorAll(".list-item");
+    console.log(listItemAll);
 // A4.
 // Use querySelectorAll to select all elements with the class "list-item".
 // Loop over the result and log the text content of each one.
 //
 // Note: the result is a NodeList, not a plain array.
-
+listItemAll.forEach((item) => {
+    console.log(item.textContent)
+});
 
 // A5.
 // EXPLAIN: What is the difference between getElementById and querySelector?
 //          What does querySelectorAll return?
 //          How is that different from a regular array?
 //
-//          answer:
-
-
+//          answer:getEle... only pertains only to the unique ID and querySelector
+//is more flexible and returns a nodelist of all matching elements. kind of an 
+//array but limited in methods
 // ------------------------------------------------------------
 // SECTION B — Reading and Changing the DOM
 // ------------------------------------------------------------
@@ -60,30 +65,29 @@ console.log("\n[ SECTION B — Reading and Changing the DOM ]")
 
 // B1.
 // Select the h1 with the id "main-heading" and log its text content.
-
+console.log(mainHeading.textContent);
 
 // B2.
 // Select the p with the id "subtitle" and change its text to "Page loaded successfully."
 // This should happen as soon as the page loads — not on a click.
-
+subtitle.textContent = "Page loaded successfully.";
 
 // B3.
 // Select the p with the id "output-text" and change its text to anything you choose.
-
-
+document.getElementById("output-text").textContent = "Now watch this drive! -George Bush Jr.";
 // B4.
 // Select the div with the id "output-box" and give it a background color of your choice.
 // Do this with JavaScript — not by editing the CSS file.
-
+document.getElementById("output-box").style.backgroundColor = "goldenrod";
 
 // B5.
 // EXPLAIN: What is textContent?
 //          How is it different from innerHTML?
 //          When would using innerHTML be risky?
 //
-//          answer:
-
-
+//          answer: textconent is plain text inside an element
+//innerHTML reads and replaces HTML inside an element and tags
+//Can be risky  because the browser might read it as code
 // ------------------------------------------------------------
 // SECTION C — Responding to Events
 // ------------------------------------------------------------
@@ -91,14 +95,18 @@ console.log("\n[ SECTION C — Responding to Events ]")
 
 // C1.
 // Add a click listener to the button with the id "change-btn".
-// When clicked, change the text of the h1 with the id "main-heading" to any text you choose.
-
+// When clicked, change the text of the h1 with the id "main-heading" 
+// to any text you choose.
+const changeButton = document.getElementById("change-btn");
+changeButton.addEventListener("click", function(event) {
+    mainHeading.textContent = "There's an old saying in Tennessee: Fool me once, shame on you. Fool me twice...you cant get fooled again"
+}
 
 // C2.
 // Add a click listener to the button with the id "toggle-btn".
 // When clicked, toggle the class "highlighted" on the p with the id "output-text".
 // Add it if it is not there. Remove it if it is.
-
+toggleBtn.addEventListener("click")
 
 // C3.
 // Select the h1 with the id "main-heading" and add the class "active" to it.

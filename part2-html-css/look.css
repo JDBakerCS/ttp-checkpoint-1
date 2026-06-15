@@ -118,7 +118,9 @@ h1 {
            What is CSS specificity and how does it determine which rule wins?
            Write your answer as a comment below these two rules.
 
-           answer:
+           answer:#intro won because its unique
+           html assume the specific thing is what the dev wants
+           so it chooses that rather than the global p
 */
 #intro {
   color: white;
